@@ -1,0 +1,15 @@
+{% load grp_tags %}
+{% spaceless %}
+<fieldset class="grp-module">
+  <h2>{{ 'Accessions' }}</h2>
+  {% for acc in original.accession_set.all %}	  
+    <div class="grp-row grp-cells-1">
+      <div class="l-2c-fluid l-d-4">
+	<div class="c-1"><a href="/admin/accessions/accession/{{ acc.id }}">{{ acc }}</a></div>
+	<div class="c-2">{{ acc.title }}</div>
+      </div>
+    </div>
+  {% endfor %}
+</fieldset>
+{% endspaceless %}
+

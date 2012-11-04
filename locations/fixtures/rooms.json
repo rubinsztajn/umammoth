@@ -1,0 +1,100 @@
+[
+    {
+        "pk": 1,
+        "model": "locations.Room",
+        "fields": {
+            "name": "25 RBR"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "locations.Room",
+        "fields": {
+            "name": 24
+        }
+    },
+    {
+        "pk": 3,
+        "model": "locations.Room",
+        "fields": {
+            "name": "Du Bois Room"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "locations.Room",
+        "fields": {
+            "name": 26
+        }
+    },
+    {
+        "pk": 6,
+        "model": "locations.Room",
+        "fields": {
+            "name": "25 South"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "locations.Room",
+        "fields": {
+            "name": "Goodell"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "locations.Room",
+        "fields": {
+            "name": "Reading room"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "locations.Room",
+        "fields": {
+            "name": "Mss curator"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "locations.Room",
+        "fields": {
+            "name": "Other"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "locations.Room",
+        "fields": {
+            "name": "Cataloging"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "locations.Room",
+        "fields": {
+            "name": "Basement"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "locations.Room",
+        "fields": {
+            "name": ""
+        }
+    },
+    {
+        "pk": 15,
+        "model": "locations.Room",
+        "fields": {
+            "name": "Oversize"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "locations.Room",
+        "fields": {
+            "name": "Digital"
+        }
+    }
+]

@@ -1,5 +1,5 @@
 # Django settings for umammoth project.
-
+import os
 import dj_database_url
 
 DEBUG = True
@@ -28,7 +28,7 @@ DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/New_York'
+TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -71,6 +71,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(os.path.split(os.path.abspath(__file__))[0], '../static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -82,7 +83,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '!@gec22sd_btz6ywq#0pd!ph-e+b0hlnfux3a@l7c65v=r6)ph'
+SECRET_KEY = 'kc6xe1^e&amp;#zwh&amp;6n7@79ey-4glin5=k2++3(3v&amp;k0%6%#_2v5p'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -110,6 +111,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(os.path.split(os.path.abspath(__file__))[0], '../templates'),
 )
 
 INSTALLED_APPS = (
@@ -119,10 +121,15 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'grappelli',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'accessions',
+    'locations',
+    'addressbook',
+    'umarmot',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -153,3 +160,14 @@ LOGGING = {
         },
     }
 }
+
+GRAPPELLI_ADMIN_TITLE = 'UMammoth'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.request",
+    "django.core.context_processors.i18n",
+    'django.contrib.messages.context_processors.messages',
+)
+
+#GRAPPELLI_INDEX_DASHBOARD = 'umammoth.dashboard.CustomIndexDashboard'

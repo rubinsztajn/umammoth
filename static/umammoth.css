@@ -1,0 +1,13 @@
+.grp-module .grp-row:not(tr) {
+    border-top: none;
+}
+
+header#grp-header #grp-navigation ul#grp-user-tools > li.grp-user-options-container {
+    width: auto;
+}
+
+header#grp-header #grp-navigation ul#grp-user-tools > li.login-nav {
+    width: 110px;
+    font-weight: normal;
+    padding-left: 50px;
+}
