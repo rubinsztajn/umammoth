@@ -27,7 +27,7 @@ class AccessionAdmin(admin.ModelAdmin):
     raw_id_fields = ('sources','collection',)
     autocomplete_lookup_fields = {'m2m':['sources','collection'],}
     list_display = ('title', 'number', 'date_rec')
-    list_filter = ('date_rec', 'rec_by', 'call_no')
+    list_filter = ('date_rec', 'rec_by', 'call_no', 'sources')
     search_fields = ('title','desc','call_no','restrictions','rec_by')
     inlines = [LocationInline]
 
