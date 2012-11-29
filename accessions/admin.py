@@ -1,18 +1,13 @@
 from accessions.models import Accession
-from locations.models import LocationMap
+from locations.models import Location
 from django.contrib import admin
 
-class LocationInline(admin.TabularInline):
-    model = LocationMap
-    fields = ('room', 'shelf')
-    extra = 1
-    
 
 class AccessionAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-             'fields': ('number', 'title', 'call_no', 'date_rec', 'sources', 'collection')
+             'fields': ('number', 'title', 'call_no', 'date_rec', 'sources', 'collection', 'locations')
         }),
         ('Description', {
              'classes': ('grp-collapse grp-closed',),
@@ -24,12 +19,12 @@ class AccessionAdmin(admin.ModelAdmin):
         }),
     )
 
-    raw_id_fields = ('sources','collection',)
-    autocomplete_lookup_fields = {'m2m':['sources','collection'],}
+    raw_id_fields = ('sources','collection','locations',)
+    autocomplete_lookup_fields = {'m2m':['sources','collection', 'locations'],}
     list_display = ('title', 'number', 'date_rec')
     list_filter = ('date_rec', 'rec_by', 'call_no', 'sources')
-    search_fields = ('title','desc','call_no','restrictions','rec_by')
-    inlines = [LocationInline]
+    search_fields = ('title','number','desc','call_no','restrictions','rec_by', 'date_mat')
+
 
 admin.site.register(Accession, AccessionAdmin)
   

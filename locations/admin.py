@@ -1,6 +1,10 @@
-from locations.models import Room, LocationMap
+from locations.models import Location
 from django.contrib import admin
 
-# admin.site.register(Room)
-# Here for testing
-# admin.site.register(LocationMap)
+
+class LocationAdmin(admin.ModelAdmin):
+    list_display = ('location', 'room')
+
+
+admin.site.register(Location, LocationAdmin)
+

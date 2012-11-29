@@ -1,6 +1,8 @@
 from django.db import models
 from addressbook.models import Contact
+from locations.models import Location
 from umarmot.models import Collection
+
 
 class Accession(models.Model):
     id = models.AutoField(primary_key=True)
@@ -22,7 +24,7 @@ class Accession(models.Model):
     value = models.CharField(max_length=100, blank=True)
     accretion = models.BooleanField()
     sources = models.ManyToManyField(Contact, blank=True)
-    
+    locations = models.ManyToManyField(Location, blank=True)
 
     @staticmethod
     def autocomplete_search_fields():
