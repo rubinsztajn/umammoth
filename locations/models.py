@@ -4,6 +4,8 @@ class Location(models.Model):
     ROOMS = (
         (u'25',u'25'),
         (u'24',u'24'),
+        (u'Goodell',u'Goodell'),
+        (u'Basement',u'Basement')
     )
 
     id = models.AutoField(primary_key=True)
