@@ -1,0 +1,15 @@
+{% load grp_tags %}
+{% spaceless %}
+<fieldset class="grp-module">
+  <h2>{{ 'Collections' }}</h2>
+  {% for coll in original.collection_set.all %}	  
+    <div class="grp-row grp-cells-1">
+      <div class="l-2c-fluid l-d-4">
+	<div class="c-1"><a href="/admin/umarmot/collection/{{ coll.id }}">{{ coll }}</a></div>
+	<div class="c-2">{{ coll.title }}</div>
+      </div>
+    </div>
+  {% endfor %}
+</fieldset>
+{% endspaceless %}
+

@@ -153,8 +153,11 @@
             {% block after_field_sets %}{% endblock %}
 
 	    
-	    {% block accessions %}
-	      {% if opts.module_name == 'collection' and original.accession_set.all %}
+	    {% block relationships %}
+	      {% if opts.module_name == 'location' or 'contact' and original.collection_set.all %}
+		{% include "admin/includes/collections.html" %}
+	      {% endif %}
+	      {% if opts.module_name == 'collection or location' or 'contact' and original.accession_set.all %}
 		{% include "admin/includes/accessions.html" %}
 	      {% endif %}
 	    {% endblock %}

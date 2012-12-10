@@ -11,3 +11,7 @@ header#grp-header #grp-navigation ul#grp-user-tools > li.login-nav {
     font-weight: normal;
     padding-left: 50px;
 }
+
+.grp-cell input[type="text"] {
+    max-width: 100px;
+}

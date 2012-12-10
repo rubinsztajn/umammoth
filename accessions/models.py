@@ -5,6 +5,7 @@ from umarmot.models import Collection
 
 
 class Accession(models.Model):
+
     id = models.AutoField(primary_key=True)
     number = models.CharField(max_length=100)
     title = models.TextField()
@@ -18,6 +19,7 @@ class Accession(models.Model):
     boxes = models.CharField("Boxes", max_length=100, blank=True)
     items = models.CharField("Items", max_length=100, blank=True)
     condition = models.TextField(blank=True)
+    admin_notes = models.TextField("Administrative notes", blank=True)
     rec_by = models.CharField("Received by", max_length=100, blank=True)
     rec_method = models.CharField("Method received", max_length=100, blank=True)
     ack_date = models.CharField("Date acknowledged", max_length=100, blank=True)

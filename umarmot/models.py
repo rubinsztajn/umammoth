@@ -15,8 +15,16 @@ class Subject(models.Model):
 
 
 class Collection(models.Model):
+    TYPES = (
+        (u'MS',u'Manuscript'),
+        (u'FS',u'Faculty/Staff'),
+        (u'RG',u'University Archives'),
+        (u'PH',u'Photograph'),
+        (u'RBR', u'Rare Books')
+    )
+
     id = models.AutoField(primary_key=True)
-    call_no = models.CharField(max_length=7, blank=True)
+    call_no = models.CharField(max_length=7)
     title = models.CharField(max_length=100)
     origination = models.CharField(max_length=100, blank=True)
     items = models.CharField(max_length=100, blank=True)
@@ -35,6 +43,7 @@ class Collection(models.Model):
     ead = models.BooleanField("EAD")
     inventory = models.BooleanField()
     locations = models.ManyToManyField(Location, blank=True)
+    coll_type = models.CharField("Collection type", max_length=50, choices=TYPES, blank=True)
 
     @staticmethod
     def autocomplete_search_fields():

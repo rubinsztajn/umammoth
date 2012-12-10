@@ -7,23 +7,19 @@ class AccessionAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-             'fields': ('number', 'title', 'call_no', 'date_rec', 'sources', 'collection', 'locations')
+             'fields': (('number','date_rec'),'accretion', 'title', 'date_mat', 'desc', 'call_no', 'sources', 'collection', 'locations')
         }),
-        ('Description', {
+        ('Administrative', {
              'classes': ('grp-collapse grp-closed',),
-             'fields': ('date_mat', 'desc', 'restrictions', 'lin_ft', 'boxes', 'items', 'condition')
-        }),
-        ('Accession data', {
-             'classes': ('grp-collapse', 'grp-closed',),
-             'fields': ('rec_by', 'rec_method', 'ack_date', 'value', 'accretion')
+             'fields': ('restrictions', ('lin_ft', 'boxes', 'items'), 'condition', 'rec_by','value','admin_notes')
         }),
     )
 
     raw_id_fields = ('sources','collection','locations',)
     autocomplete_lookup_fields = {'m2m':['sources','collection', 'locations'],}
-    list_display = ('title', 'number', 'date_rec')
+    list_display = ('number','title', 'date_rec')
     list_filter = ('date_rec', 'rec_by', 'call_no', 'sources')
-    search_fields = ('title','number','desc','call_no','restrictions','rec_by', 'date_mat')
+    search_fields = ('title','number','desc','call_no','restrictions','rec_by', 'date_mat', 'admin_notes', 'sources__first_name', 'sources__last_name', 'collection__title', 'locations__location')
 
 
 admin.site.register(Accession, AccessionAdmin)
