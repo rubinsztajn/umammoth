@@ -22,6 +22,7 @@ class CollectionAdmin(admin.ModelAdmin):
 
     search_fields = ('title', 'abstract', 'call_no', 'origination', 'locations__location', 'date_start', 'date_end', 'accession__title')
     list_display = ('call_no', 'title', 'date_start', 'date_end', 'lin_ft')
+    list_display_links = ('title',)
     list_filter = ('coll_type', 'umarmot', 'ead')
     raw_id_fields = ('sources','locations',)
     autocomplete_lookup_fields = {
