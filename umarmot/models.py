@@ -50,5 +50,5 @@ class Collection(models.Model):
         return ('title__icontains',)
 
     def __unicode__(self):
-        return self.title
+        return self.call_no
 
